@@ -1,0 +1,73 @@
+drop table if exists bg_object_types;
+drop table if exists bg_object;
+drop table if exists asteroid_types;
+drop table if exists level_asteroid;
+drop table if exists levels;
+drop table if exists cannons;
+drop table if exists extra_parts;
+drop table if exists main_bodies;
+drop table if exists engines;
+drop table if exists power_cores;
+
+create table bg_object_types {
+  id integer not null primary key autoincrement,
+  image_path,
+};
+
+create table bg_object {
+  id integer not null primary key autoincrement,
+  level_id,
+  bg_object_type_id,
+  position_x,
+  position_y,
+  scale
+};
+
+create table asteroid_types {
+  id integer not null primary key autoincrement,
+  name,
+  image,
+  image_width,
+  image_height,
+  type
+};
+
+create table level_asteroid {
+  id integer not null primary key autoincrement,
+  level_id,
+  asteroid_type_id,
+  number
+};
+
+create table levels {
+  id integer not null primary key autoincrement,
+  number,
+  title,
+  hint,
+  width,
+  height,
+  music_file
+};
+
+create table cannons {
+  id integer not null primary key autoincrement,
+};
+
+create table extra_parts {
+  id integer not null primary key autoincrement,
+};
+
+create table main_bodies {
+  id integer not null primary key autoincrement,
+};
+
+create table engines {
+  id integer not null primary key autoincrement,
+};
+
+create table power_cores {
+  id integer not null primary key autoincrement,
+  cannon_boost integer not null,
+  engine_boost  integer not null,
+  image file text not null
+};
