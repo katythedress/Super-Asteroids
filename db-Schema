@@ -11,7 +11,7 @@ drop table if exists power_cores;
 
 create table bg_object_types {
   id integer not null primary key autoincrement,
-  image_path varchar(255),
+  image_path varchar(255)
 };
 
 create table bg_object {
